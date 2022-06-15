@@ -42,6 +42,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     _pageController = PageController(initialPage: widget.pageIndex);
 
+
     _screens = [
       HomeScreen(),
       GroceryScreen(),
@@ -52,8 +53,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       Container(),
     ];
 
-    Future.delayed(Duration(seconds: 1), () {
-      setState(() {});
+    Future.delayed(Duration(seconds: 2), () {
+      FatchResturentData();
     });
 
     /*if(GetPlatform.isMobile) {
@@ -65,6 +66,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+
         if (_pageIndex != 0) {
           _setPage(0);
           return false;
@@ -113,6 +115,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
             child: Row(children: [
               BottomNavItem(iconData: Icons.home, isSelected: _pageIndex == 0, onTap: () {
+                print("?????????????????????????????????????????????????????????????????????????");
                 Get.find<SplashController>().switchModule(0, true);
                 _setPage(0);
               }),
@@ -146,5 +149,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
       _pageController.jumpToPage(pageIndex);
       _pageIndex = pageIndex;
     });
+  }
+  void FatchResturentData(){
+    if(_pageIndex == 0){
+      _setPage(0);
+      Future.delayed(Duration(seconds: 2), () {
+        Get.find<SplashController>().switchModule(0, true);
+      });
+    }
   }
 }

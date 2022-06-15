@@ -28,7 +28,7 @@ class ModuleView extends StatelessWidget {
         return BannerView(isFeatured: true);
       }),
 
-      splashController.moduleList != null ? splashController.moduleList.length > 0 ? GridView.builder(
+/*      splashController.moduleList != null ? splashController.moduleList.length > 0 ? GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, mainAxisSpacing: Dimensions.PADDING_SIZE_SMALL,
           crossAxisSpacing: Dimensions.PADDING_SIZE_SMALL, childAspectRatio: (1/1),
@@ -68,7 +68,7 @@ class ModuleView extends StatelessWidget {
         },
       ) : Center(child: Padding(
         padding: EdgeInsets.only(top: Dimensions.PADDING_SIZE_SMALL), child: Text('no_store_category_found'.tr),
-      )) : ModuleShimmer(isEnabled: splashController.moduleList == null),
+      )) : ModuleShimmer(isEnabled: splashController.moduleList == null),*/
       SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
 
       Padding(
